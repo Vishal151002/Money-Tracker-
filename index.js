@@ -39,6 +39,6 @@ app.get("/",(req,res) =>{
         "Allow-access-Allow-Origin":'*'
     })
     return res.redirect('index.html')
-}).listen(5000)
+}).listen(3000)
 
-console.log("Listening on port 5000")
+console.log("Listening on port 3000")

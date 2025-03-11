@@ -1,60 +1,244 @@
-body{
-    background-color: rgb(172, 211, 246);
-    font-family: Arial, Helvetica, sans-serif;
-    margin:0;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
-h1,h2{
+
+body {
+    background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+    color: #333;
+    line-height: 1.6;
+    padding: 30px 20px;
+    min-height: 100vh;
+}
+
+h1 {
     text-align: center;
+    color: #333; /* Changed from white to dark text */
+    margin-bottom: 30px;
+    font-weight: 700;
+    font-size: 2.5rem;
+    text-shadow: none; /* Removed text shadow */
+    background-color: white; /* Added white background */
+    padding: 15px;
+    border-radius: 10px 10px 0 0;
+    margin-bottom: 0; /* Attach to form */
+    box-shadow: 0 -5px 15px rgba(0, 0, 0, 0.1);
 }
 
-.input-section{
-    display:flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px;
+h2 {
+    color: #333;
+    margin-bottom: 20px;
+    font-weight: 600;
+    font-size: 1.8rem;
+    border-bottom: 3px solid #ff9800;
+    padding-bottom: 8px;
+    display: inline-block;
 }
 
-.input-section label{
-    font-weight: bold;
-    margin-right: 10px;
+form {
+    background-color: white;
+    padding: 30px;
+    border-radius: 0 0 15px 15px; /* Changed to connect with title */
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    margin-bottom: 30px;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
 }
-.input-section input{
-    padding: 5px;
-    margin-right: 10px;
+
+.input-section {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 25px;
 }
-.input-section button{
-    padding: 5px 10px;
-    background-color: rgb(242, 73, 129);
-    color:white;
-    border: none;
-    border-radius: 4px;
+
+/* Fix for label and input arrangement */
+.input-group {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: #444;
+    font-size: 1rem;
+}
+
+select, input {
+    width: 100%;
+    padding: 12px 15px;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: all 0.3s;
+}
+
+select {
+    background-color: #fff;
     cursor: pointer;
 }
-.expenses-list{
-    margin: 20px;
+
+select:focus, input:focus {
+    outline: none;
+    border-color: #3498db;
+    box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.25);
 }
-table{
+
+button {
+    background: linear-gradient(to right, #ff9800, #f44336);
+    color: white;
+    border: none;
+    padding: 14px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 1.1rem;
+    transition: all 0.3s;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+button:hover {
+    background: linear-gradient(to right, #f44336, #ff9800);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+}
+
+.expenses-list {
+    background-color: white;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+table {
     width: 100%;
     border-collapse: collapse;
+    margin-top: 15px;
+    border-radius: 8px;
+    overflow: hidden;
 }
-th,td{
-    border: 1px solid #ddd;
-    padding: 8px;
-    text-align: left;;
+
+th, td {
+    padding: 15px;
+    text-align: left;
 }
-th{
-    background-color: rgb(246, 75, 28);
-    color:rgb(253, 253, 250)
-}
-tfoot td{
-    font-weight: bold;
-}
-.delete-btn{
-    padding: 5px 10px;
-    background-color: rgb(198, 69, 69);
+
+th {
+    background: linear-gradient(to right, #4a00e0, #8e2de2);
     color: white;
-    border:none;
-    border-radius: 4px;
-    cursor:pointer;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+}
+
+tbody tr:nth-child(odd) {
+    background-color: #f9f9f9;
+}
+
+tbody tr:nth-child(even) {
+    background-color: #f1f1f1;
+}
+
+tbody tr:hover {
+    background-color: #e9f5fe;
+}
+
+tfoot {
+    font-weight: 700;
+    background-color: #f8f8f8;
+    border-top: 3px solid #ddd;
+}
+
+/* Expense and Income color coding */
+.income {
+    color: #00c853;
+    font-weight: 600;
+}
+
+.expense {
+    color: #f44336;
+    font-weight: 600;
+}
+
+/* Delete button styling */
+.delete-btn {
+    background: linear-gradient(to right, #ff416c, #ff4b2b);
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.3s;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.delete-btn:hover {
+    background: linear-gradient(to right, #ff4b2b, #ff416c);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+/* Title container */
+.app-header {
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .input-section {
+        grid-template-columns: 1fr;
+    }
+    
+    form, .expenses-list {
+        padding: 20px;
+        border-radius: 10px;
+    }
+    
+    th, td {
+        padding: 12px 10px;
+        font-size: 0.9rem;
+    }
+    
+    h1 {
+        font-size: 2rem;
+    }
+    
+    h2 {
+        font-size: 1.5rem;
+    }
+}
+
+/* Add HTML structure fix - wrapper for input groups */
+input[type="date"] {
+    background-color: white;
+}
+
+/* Additional colorful elements */
+#total-amount {
+    font-size: 1.1rem;
+    background: linear-gradient(to right, #00c853, #64dd17);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    font-weight: 700;
+}
+
+/* For negative totals */
+#total-amount.negative {
+    background: linear-gradient(to right, #ff416c, #ff4b2b);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
 }

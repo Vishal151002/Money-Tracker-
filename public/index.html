@@ -7,23 +7,33 @@
     <title>Money Tracker App</title>
 </head>
 <body>
-    <form action="/add" method="POST">
+    <div class="app-header">
         <h1>Money Tracker App</h1>
-        <div class="input-section">
-            <label for="category_select">Category: </label>
-            <select id="category_select" name="category_select">
-                <option value="Expense">Expense</option>
-                <option value="Income">Income</option>
-            </select>
-            <label for="amount_input">Amount:</label>
-            <input type="number" id="amount_input" name="amount_input">
-            <label for="info">Info:</label>
-            <input type="text" id="info" name="info">
-            <label for="date_input">Date:</label>
-            <input type="date" id="date_input" name="date_input">
-            <button id="add_btn">Add</button>
-        </div>
-    </form>
+        <form action="/add" method="POST">
+            <div class="input-section">
+                <div class="input-group">
+                    <label for="category_select">Category: </label>
+                    <select id="category_select" name="category_select">
+                        <option value="Expense">Expense</option>
+                        <option value="Income">Income</option>
+                    </select>
+                </div>
+                <div class="input-group">
+                    <label for="amount_input">Amount:</label>
+                    <input type="number" id="amount_input" name="amount_input">
+                </div>
+                <div class="input-group">
+                    <label for="info">Info:</label>
+                    <input type="text" id="info" name="info">
+                </div>
+                <div class="input-group">
+                    <label for="date_input">Date:</label>
+                    <input type="date" id="date_input" name="date_input">
+                </div>
+                <button id="add_btn">Add</button>
+            </div>
+        </form>
+    </div>
 
     <div class="expenses-list">
         <h2>Expenses and Incomes List</h2>
